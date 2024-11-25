@@ -4,7 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text to Speech Converter</title>
-  <link rel="stylesheet" href="./style.css">
+  <!--<link rel="stylesheet" href="./style.css">-->
+    <style>
+        /* styles.css */
+@import url( 
+"https://fonts.googleapis.com/css2?family=Pacifico&display=swap"); 
+* { 
+	box-sizing: border-box; 
+	margin: 0; 
+	padding: 0; 
+}
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+         /* body {
+            margin: 0;*/
+            overflow: hidden;
+            background: url("https://images.unsplash.com/photo-1615056906974-f167481eadd0?q=80&w=587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
+            animation: sparkleBackground 10s infinite linear;
+        
+        }
+
+        textarea {
+            width: 80%;
+            height: 100px;
+            margin-bottom: 20px;
+            resize: none;
+            font-size: 16px;
+            color:#fff;
+        }
+
+        /*Normal button style 
+          button {
+          background-image: linear-gradient(135deg, color(display-p3 .572549 .415686 1) 0%, color(display-p3 1 .466667 .690196) 50%, color(display-p3 1 .701961 .403922) 100%);
+            font-size: 16px;
+            padding: 10px;
+            cursor: pointer;
+        }*/
+          /* Modern animated button style*/
+          .button {
+  touch-action: manipulation;
+  appearance: button;
+  background-color: transparent;
+  border-style: initial;
+  border-width: 0;
+  cursor: pointer;
+  margin: 0;
+  text-transform: none;
+  vertical-align: baseline;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.button {
+  touch-action: manipulation;
+  background-image:url("http://www.zingerbugimages.com/backgrounds/blue_and_purple_dimple_glass.jpg");
+  /*background-image: linear-gradient(135deg, color(display-p3 .572549 .415686 1) 0%, color(display-p3 1 .466667 .690196) 50%, color(display-p3 1 .701961 .403922) 100%);*/
+  border-radius: 8px;
+  color: #fff;
+  font-feature-settings: "ss01", "cv10", "calt"0, "liga"0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 10px 20px;
+  position: relative;
+  transition: transform .2s cubic-bezier(.6, .6, 0, 1), margin-top .2s cubic-bezier(.6, .6, 0, 1);
+  transition-behavior: normal, normal;
+}
+
+.button::before {
+  -webkit-mask-clip: content-box, initial;
+  -webkit-mask-composite: xor;
+  -webkit-mask-image: linear-gradient(#fff 0, #fff 0), linear-gradient(#fff 0, #fff 0);
+  -webkit-mask-origin: content-box, initial;
+  -webkit-mask-position-x: initial, initial;
+  -webkit-mask-position-y: initial, initial;
+  -webkit-mask-repeat-x: initial, initial;
+  -webkit-mask-repeat-y: initial, initial;
+  -webkit-mask-size: initial, initial;
+  padding: 1px;
+}
+
+.button::before {
+  background-color: initial;
+  background-image: linear-gradient(rgba(255, 255, 255, .32), transparent);
+  bottom: 0;
+  pointer-events: none;
+  right: 0;
+}
+
+.button::after,
+.button-8::before {
+  border-radius: inherit;
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.button::after {
+  box-shadow: #000019 0 0, rgba(0, 0, 25, .3) 0 9px 21px, rgba(73, 2, 57, .2) 0 -3px inset;
+  height: 100%;
+  transition: box-shadow .2s cubic-bezier(.6, .6, 0, 1), background-color .2s cubic-bezier(.6, .6, 0, 1);
+  transition-behavior: normal, normal;
+  width: 100%;
+  z-index: 1;
+}
+
+.button:active {
+  transform: translateY(1.5px);
+}
+
+.button:hover::after {
+  background-color: rgba(255, 255, 255, .1);
+}
+
+.button:active::after {
+  box-shadow: #000019 0 0, rgba(0, 0, 25, .2) 0 9px 21px, rgba(73, 2, 57, .2) 0 0 inset;
+}
+    
+    </style>
 </head>
 <body>
 
